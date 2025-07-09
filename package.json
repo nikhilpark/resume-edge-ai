@@ -9,7 +9,24 @@
     "build": "plasmo build",
     "package": "plasmo package"
   },
+  "plasmo": {
+    "content_scripts": [
+      {
+        "matches": [
+          "*://www.linkedin.com/jobs/*"
+        ],
+        "js": [
+          "contents/read-jd.content.ts"
+        ]
+      }
+    ]
+  },
+  "host_permissions": [
+    "https://www.linkedin.com/*"
+  ],
   "dependencies": {
+    "@plasmohq/storage": "^1.15.0",
+    "pdfjs-dist": "^5.3.93",
     "plasmo": "0.90.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
