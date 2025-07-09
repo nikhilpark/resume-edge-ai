@@ -10,7 +10,7 @@ function IndexPopup() {
   const [tailoredResumeText,setTailoredResumeText] = useState("")
 
   const readJD = () => {
-    console.log("READING JD........")
+    console.log("READING JD.......")
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (!tabs[0].id) return
       chrome.tabs.sendMessage(tabs[0].id, { type: "GET_JD" }, (response) => {
